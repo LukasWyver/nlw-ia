@@ -8,7 +8,7 @@ import { generateAICompletionRoute } from "./routes/generate-ai-completion";
 const app = fastify()
 
 app.register(fastifyCors, {
-    origin: '*',
+    origin: 'https://nlw-upload-ia.vercel.app',
 })
 
 app.register(getAllPromptsRoute)
@@ -16,8 +16,9 @@ app.register(uploadVideoRoute)
 app.register(createTranscriptionRoute)
 app.register(generateAICompletionRoute)
 
-app.listen({
-    port: 3333,
+app.listen({   
+    host: '0.0.0.0',
+    port:  process.env.PORT ? Number(process.env.PORT) : 3333,
 }).then(() => {
     console.log('HTTP Server Running!')
 })

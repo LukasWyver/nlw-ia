@@ -39,7 +39,7 @@ export async function generateAICompletionRoute(app: FastifyInstance){
 
         streamToResponse(stream, reply.raw, {
             headers: {
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'https://nlw-upload-ia.vercel.app',
                 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
             }
         })
