@@ -8,7 +8,7 @@ import { generateAICompletionRoute } from "./routes/generate-ai-completion";
 const app = fastify()
 
 app.register(fastifyCors, {
-    origin: 'https://nlw-upload-ia.onrender.com',
+    origin: '*',
 })
 
 app.register(getAllPromptsRoute)
